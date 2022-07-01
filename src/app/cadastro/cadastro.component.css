@@ -1,0 +1,17 @@
+.gradient-custom {
+    background: rgb(181, 204, 171);
+    background: linear-gradient(164deg, rgba(103, 115, 98, 1) 21%, rgba(110, 142, 88, 1) 58%, rgba(156, 181, 139, 1) 94%);
+}
+
+.bordaLogin {
+    border-radius: 20%;
+}
+
+.fotoLogin {
+    width: 250px;
+    height: 250px;
+}
+
+#bgForm {
+    background-color: #586154;
+}
