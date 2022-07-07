@@ -15,27 +15,27 @@
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="nome" id="typeNomeX" class="form-control form-control-lg" placeholder="Nome" />
+                                    <input [(ngModel)]="usuario.nome" type="nome" id="typeNomeX" class="form-control form-control-lg" placeholder="Nome" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4 ">
-                                    <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Usuário" />
+                                    <input  [(ngModel)]="usuario.usuario"type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Usuário" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="foto" id="typeFotoX" class="form-control form-control-lg" placeholder="Link foto" />
+                                    <input  [(ngModel)]="usuario.foto"type="foto" id="typeFotoX" class="form-control form-control-lg" placeholder="Link foto" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Senha" />
+                                    <input  (input)='confirmarSenha($event)' type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Senha" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Confirme a senha" />
+                                    <input  [(ngModel)]="usuario.senha" type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Confirme a senha" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <select class="form-control form-control-lg" name="tipo" id="typeTipoX">
+                                    <select class="form-control form-control-lg" name="tipo" id="tipo" (change)='tipoUser($event)'>
                                         <option>Selecione sua categoria:</option>
                                         <option value="ong">ONG/Associação</option>
                                         <option value="doador">Doador/Empresa</option>
@@ -44,7 +44,7 @@
 
                                 <button class="btn btn-outline-danger btn text-white font-weight-bold px-5 mr-2" type="submit" routerLink="/login">Cancelar</button>
 
-                                <button class="btn btn-outline-success btn text-white font-weight-bold px-5" type="submit">Cadastrar</button>
+                                <button class="btn btn-outline-success btn text-white font-weight-bold px-5" type="submit"(click)="cadastrar()">Cadastrar</button>
 
                             </div>
 
