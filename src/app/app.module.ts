@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TemaComponent } from './tema/tema.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     CadastroComponent,
     EquipeComponent,
     HomeComponent,
-    PostagemComponent
+    PostagemComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
