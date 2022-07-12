@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'rodape', component: RodapeComponent},
   {path: 'postagem', component: PostagemComponent},
-  {path: 'tema', component: TemaComponent},
+  {path: 'tema', component: TemaComponent}
 ];
 
 @NgModule({
