@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
       environment.nome = this.usuarioLogin.nome
       environment.foto = this.usuarioLogin.foto
       environment.id = this.usuarioLogin.id
+      environment.tipo = this.usuarioLogin.tipo
 
       console.log(environment.token)
 
@@ -38,6 +39,8 @@ export class LoginComponent implements OnInit {
       console.log(environment.foto)
 
       console.log(environment.id)
+
+      
 
 
       this.usuarioLogin.foto

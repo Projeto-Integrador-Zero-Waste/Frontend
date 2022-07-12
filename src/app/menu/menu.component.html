@@ -1,7 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Zero Waste</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -24,7 +25,20 @@
             </li>
         </ul>
 
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cadastre-se</button>
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cadastre-se</button> -->
+
+        <!-- Example single danger button -->
+        <div class="btn-group pl-5 pr-5">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Perfil
+            </button>
+            <div class="dropdown-menu text-center bg-light">
+                <img src="{{foto}}" class="img-fluid rounded-circle" alt="imagem do usuario" width="100" height="100">
+                <p class="pt-2">{{nome}}</p>
+                <a class="dropdown-item pt-3" href="#">Editar</a>
+                <a class="dropdown-item" (click)='sair()' href="#">Sair</a>
+            </div>
+        </div>
 
     </div>
 </nav>

@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+    <div class="row d-flex justify-content-center pt-5 pb-5 bg-dark">
+
+        <div class="col-md-8">
+
+            <h1 class="text-center mb-3 text-white">Postagens</h1>
+            <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, incidunt hic ipsa
+                repudiandae magni,
+                velit excepturi minus veniam quibusdam debitis error pariatur, libero alias harum repellendus fuga
+                maiores eligendi officia!</p>
+
+            <div class="row d-flex justify-content-center mt-5">
+                <button class="btn btn-outline-success mr-4" data-toggle="modal" data-target="#novaPostagem" type="submit">Nova Postagem</button>
+                <button class="btn btn-outline-success" href="#postagens" type="submit">Ver todas as postagens</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container mb-5 mt-5" id="postagens">
+
+    <nav>
+        <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active text-secondary font-weight-bold" id="nav-home-tab" data-toggle="tab"
+                href="#todasPostagens" role="tab" aria-controls="nav-todasPostagens" aria-selected="true">Todas as
+                postagens</a>
+
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-minhasPostagens-tab" data-toggle="tab"
+                href="#minhasPostagens" role="tab" aria-controls="nav-minhasPostagens" aria-selected="false">Minhas
+                postagens</a>
+
+            <a class="nav-item nav-link text-secondary font-weight-bold" id="nav-postagemTema-tab" data-toggle="tab"
+                href="#postagemTema" role="tab" aria-controls="nav-postagemTema" aria-selected="false">Postagens por
+                tema</a>
+        </div>
+    </nav>
+
+    <div class="tab-content" id="nav-tabContent">
+
+        <div class="tab-pane fade show" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            Todas postagens
+        </div>
+
+        <div class="tab-pane fade show" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            Minhas postagens
+        </div>
+
+        <div class="tab-pane fade show" id="postagemTema" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
+            Postagens por tema
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="novaPostagem" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+
+                <div class="form-group">
+                    <label for="titulo">Título</label>
+                    <input type="text" class="form-control" id="titulo"
+                        placeholder="Digite o título">
+                </div>
+
+                <div class="form-group">
+                    <label for="texto">Texto</label>
+                    <textarea class="form-control" name="texto" id="texto"
+                        rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="texto">Escolha um tema ou <a data-dismiss="modal">cadastre um
+                            novo</a>: </label>
+                    <select name="tema" id="tema" class="form-control">
+                        <option value=""></option>
+                    </select>
+
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success"
+                    data-dismiss="modal">Publicar</button>
+            </div>
+        </div>
+    </div>
+</div>
