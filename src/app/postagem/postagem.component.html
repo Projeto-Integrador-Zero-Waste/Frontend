@@ -43,7 +43,7 @@
 
 </div>
 
-<div class="tab-content mt-5" id="nav-tabContent">
+<div class="container tab-content mt-5" id="nav-tabContent">
 
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
@@ -57,22 +57,31 @@
             </div>
         </div>
 
-        <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of listaPostagens'>
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{item.titulo}}</h5>
-                    <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
-                    <p class="card-text mt-3">{{item.texto}}</p>
-                    <p class="card-text"><small class="text-muted">
-                            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
-                        </small></p>
-
-                    <p class="card-text"><small class="text-muted">
-                            by: {{item.usuario.nome}}
-                        </small></p>
+        <div class="row row-cols-1 row-cols-md-3" >
+            <div class="col" *ngFor='let item of listaPostagens'>
+              <div class="card mb-3" style="height: 550px">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+                <div class="card-body text-center">
+                    <div class="card-custom-avatar">
+                        <img class="img-fluid" src={{item.usuario.foto}} alt="Avatar" />
+                      </div>
+                  <h5 class="card-title">{{item.titulo}}</h5>
+                  <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+                  <p class="card-text">{{item.texto}}</p>
+                  <p class="card-text"><small class="text-muted">
+                    Postado por: {{item.usuario.nome}}
+                </small></p>
                 </div>
+                
+                <div class="card-footer ">                    
+                    <p class="card-text"><small class="text-muted">
+                        {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                    </small></p>
+                </div>
+              </div>
             </div>
-        </div>
+
+        </div>  
 
     </div>
 
@@ -82,53 +91,34 @@
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
 
-        <div class="card-columns">
-            <div class="card text-center" *ngFor='let item of usuario.postagem'>
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{item.titulo}}</h5>
-                    <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
-                    <p class="card-text mt-3">{{item.texto}}</p>
-                    <p class="card-text"><small class="text-muted">
-                            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
-                        </small></p>
-
+        <div class="row row-cols-1 row-cols-md-3">
+            <div class="col" *ngFor='let item of usuario.postagem'>
+                <div class="card mb-3" style="height: 550px">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
+                        alt="Skyscrapers" />
+                    <div class="card-body text-center">
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid" src={{usuario.foto}} alt="Avatar" />
+                        </div>
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+                        <p class="card-text">{{item.texto}}</p>
                         <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
                         <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
-
+                    </div>
+                    
+                    <div class="card-footer ">
+                        <p class="card-text"><small class="text-muted">
+                                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                            </small></p>
+                    </div>
                 </div>
             </div>
+
         </div>
 
     </div>
 
-
-
-
-    <!-- <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
-
-        <div class="row d-flex justify-content-center mt-5 mb-5">
-            <div class="col-md-4">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="titulo" placeholder="Digite um tema para pesquisar">
-                </div>
-            </div>
-        </div>
-
-
-        <div class="card-columns" *ngFor='let tema of listaTemas'>
-            <div class="card text-center" *ngFor='let item of tema.postagem'>
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{item.titulo}}</h5>
-                    <p class="card-text mt-3">{{item.texto}}</p>
-                    <p class="card-text"><small class="text-muted">{{item.data | date: 'dd/MM/yyyy'}} às {{item.data |
-                            date:
-                            'HH:mm'}}</small></p>
-
-                    <p class="card-text"><small class="text-muted"> by: {{item.usuario.nome}}</small></p>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
     <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
 
