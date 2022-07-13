@@ -36,9 +36,9 @@ export class PostagemComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    window.scroll(0,0)
+    window.scroll(0, 0)
 
-    if(environment.token == ''){
+    if (environment.token == '') {
       this.router.navigate(['/login'])
     }
 
@@ -46,32 +46,32 @@ export class PostagemComponent implements OnInit {
     this.getAllPostagens()
   }
 
-  getAllTemas(){
+  getAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[]) => {
       this.listaTemas = resp
     })
   }
 
-  findByIdTema(){
-    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) =>{
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema) => {
       this.tema = resp
     })
   }
 
-  getAllPostagens(){
+  getAllPostagens() {
     this.postagemService.getAllPostagens().subscribe((resp: Postagem[]) => {
       this.listaPostagens = resp
     })
   }
 
-  findByIdUsuario(){
+  findByIdUsuario() {
     this.authService.getByIdUsuario(this.idUser).subscribe((resp: Usuario) => {
       this.usuario = resp
     })
   }
 
-  findByTituloPostagem(){
-    if(this.tituloPost == ''){
+  findByTituloPostagem() {
+    if (this.tituloPost == '') {
       this.getAllPostagens()
     } else {
       this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
@@ -80,8 +80,8 @@ export class PostagemComponent implements OnInit {
     }
   }
 
-  findByTituloTema(){
-    if(this.tituloTema == ''){
+  findByTituloTema() {
+    if (this.tituloTema == '') {
       this.getAllTemas()
     } else {
       this.temaService.getByTituloTema(this.tituloTema).subscribe((resp: Tema[]) => {
@@ -92,7 +92,7 @@ export class PostagemComponent implements OnInit {
 
 
 
-  publicar(){
+  publicar() {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
 
@@ -104,9 +104,12 @@ export class PostagemComponent implements OnInit {
       alert('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
+
+    }, erro => {
+      alert('Não foi possível cadastrar sua postagem')
     })
   }
 
- 
+
 
 }
