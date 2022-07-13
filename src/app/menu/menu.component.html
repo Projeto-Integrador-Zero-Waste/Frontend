@@ -35,7 +35,7 @@
             <div class="dropdown-menu text-center bg-light">
                 <img src="{{foto}}" class="img-fluid rounded-circle" alt="imagem do usuario" width="100" height="100">
                 <p class="pt-2">{{nome}}</p>
-                <a class="dropdown-item pt-3" href="#">Editar</a>
+                <a class="dropdown-item pt-3" [routerLink]="['/usuario-edit', id]" >Editar</a>
                 <a class="dropdown-item" (click)='sair()' href="#">Sair</a>
             </div>
         </div>
