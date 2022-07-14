@@ -94,7 +94,7 @@
         <div class="row row-cols-1 row-cols-md-3">
             <div class="col" *ngFor='let item of usuario.postagem'>
                 <div class="card mb-3" style="height: 550px">
-                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
+                    <img src="https://i.imgur.com/2V4JLEb.png" class="card-img-top"
                         alt="Skyscrapers" />
                     <div class="card-body text-center">
                         <div class="card-custom-avatar">
@@ -132,21 +132,25 @@
         </div>
 
         <div class="card-columns" *ngFor='let tema of listaTemas'>
-            <div class="card text-center" *ngFor='let item of tema.postagem'>
-                <div class="card-body">
-                    <h5 class="card-title m-0">{{item.titulo}}</h5>
-                    <small>Tema: {{tema.titulo}}</small>
-                    <p class="card-text mt-3">{{item.texto}}</p>
-                    <p class="card-text"><small class="text-muted">
-                            {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
-                        </small></p>
-
-                    <p class="card-text"><small class="text-muted">
-                            by: {{item.usuario.nome}}
-                        </small></p>
-
+            <div class="card" *ngFor='let item of tema.postagem'>
+                <div class="card mb-5 text-center" style="height: 550px">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
+                        alt="Skyscrapers" />
+                    <div class="card-body text-center">
+                        <div class="card-custom-avatar">
+                            <img class="img-fluid" src={{item.usuario.foto}} alt="Avatar" />
+                        </div>
+                        <h5 class="card-title">{{item.titulo}}</h5>
+                        <small>Tema: {{tema.titulo}}</small>
+                        <p class="card-text">{{item.texto}}</p>
+                        <p class="card-text"><small class="text-muted">
+                                Postado por: {{item.usuario.nome}}
+                            </small></p>
+                    </div>
+                    
                 </div>
             </div>
+
         </div>
 
     </div>
