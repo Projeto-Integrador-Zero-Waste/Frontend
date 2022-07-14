@@ -21,7 +21,7 @@ postagem: Postagem = new Postagem()
   ngOnInit() {
 
     if(environment.token == ''){
-      alert('Sua seção expirou, faça o login novamente')
+      alert('Sua sessão expirou, faça o login novamente')
       this.router.navigate(['/login'])
     }
   }

@@ -2,22 +2,17 @@
     font-size: 150pt;
 }
 
-#carouselArrow {
-    border: 5px solid #265834;
-    background-color: #265834;
-    color: #265834;
-    font-size: 25px;
-}
-
-.carousel-indicators li {
-    border-radius: 20%;
+.carousel-indicators li{
+    border-radius: 50%;
     width: 13px;
     height: 13px;
+    background-color: black;
 }
 
-.carousel-indicators .active {
+.carousel-indicators .active{
     background-color: #265834;
 }
+
 
 .card {
     z-index: 0;

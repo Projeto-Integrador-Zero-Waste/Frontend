@@ -10,15 +10,15 @@
         <ul class="navbar-nav font-weight-light m-auto">
 
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/home']">Home <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Postagens</a>
+                <a class="nav-link" [routerLink]="['/postagem']">Postagens</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Equipe</a>
+                <a class="nav-link" [routerLink]="['/equipe']">Equipe</a>
             </li>
 
             <li class="nav-item">
@@ -28,13 +28,13 @@
 
 
         <div class="btn-group pl-5 pr-5">
-            <button type="button" class="btn btn-green dropdown-toggle text-light" data-toggle="dropdown">
+            <button type="button" class="btn dropdown-toggle text-light " id="button-perfil" data-toggle="dropdown">
                 Perfil
             </button>
-            <div class="dropdown-menu text-center bg-light">
-                <img src="{{foto}}" class="img-fluid rounded-circle" alt="imagem do usuario" width="100" height="100">
+            <div class="dropdown-menu text-center">
+                <img src="{{foto}}" class="img-fluid rounded-circle mt-3" alt="imagem do usuario" width="100" height="100">
                 <p class="pt-2">{{nome}}</p>
-                <a class="dropdown-item pt-3" href="#">Editar</a>
+                <a class="dropdown-item pt-3 editarHover" [routerLink]="['/usuario-edit', id]">Editar</a>
                 <a class="dropdown-item" (click)='sair()' href="#">Sair</a>
             </div>
         </div>

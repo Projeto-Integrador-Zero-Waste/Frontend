@@ -1,0 +1,36 @@
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.social-link:hover, .social-link:focus {
+    background: rgb(91, 148, 91);
+    text-decoration: none;
+    color: #555;
+}
+
+.gradient-custom {
+    background: rgb(181, 204, 171);
+    background: linear-gradient(164deg, rgba(103, 115, 98, 1) 21%, rgba(110, 142, 88, 1) 58%, rgba(156, 181, 139, 1) 94%);
+}
+
+.bgCard {
+    background: rgb(221, 230, 206);
+   
+}
+
+
+
+.tmFoto{
+    height: 120px;
+    width: 120px;
+}
+

@@ -58,7 +58,7 @@
 
         <div class="row row-cols-1 row-cols-md-3" >
             <div class="col" *ngFor='let item of listaPostagens'>
-              <div class="card mb-3" style="height: 550px">
+              <div class="card mb-3" style="height: 580px">
                 <img src={{item.foto}} class="card-img-top"
                         alt="Skyscrapers" height="250px"/>
                 <div class="card-body text-center">
@@ -78,9 +78,6 @@
                         <a>{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</a>
                         
                     </small></p>
-
-    
-
                 </div>
               </div>
             </div>
@@ -167,33 +164,34 @@
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="TituloModalCentralizado">Nova Postagem</h5>
+                    <h4 class="modal-title font-weight-bold" id="TituloModalCentralizado">Nova Postagem</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body text-center">
+                <div class="modal-body">
 
                     <div class="form-group">
-                        <label for="titulo">Titulo</label>
+                        <label for="titulo" class="font-weight-bold">Título</label>
                         <input [(ngModel)]="postagem.titulo" type="text" class="form-control" id="titulo"
-                            placeholder="Digite o título">
+                            placeholder="Título da postagem">
                     </div>
 
                     <div class="form-group">
-                        <label for="texto">Texto</label>
+                        <label for="texto" class="font-weight-bold">Texto</label>
                         <textarea [(ngModel)]="postagem.texto" class="form-control" name="texto" id="texto"
+                        placeholder="Texto da postagem">
                             rows="3"></textarea>
                     </div>
 
                     <div class="form-group">
-                        <label for="titulo">Foto</label>
+                        <label for="titulo" class="font-weight-bold">Foto</label>
                         <input [(ngModel)]="postagem.foto" type="text" class="form-control" id="titulo"
-                            placeholder="Digite a foto">
+                            placeholder="Link da foto">
                     </div>
 
                     <div class="form-group">
-                        <label for="texto">Escolha um tema ou <a routerLink="/tema" data-dismiss="modal">cadastre um
+                        <label for="texto" class="font-weight-bold">Escolha um tema ou <a routerLink="/tema" data-dismiss="modal">cadastre um
                                 novo</a>: </label>
                         <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema"
                             (change)="findByIdTema()">
@@ -204,8 +202,8 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" data-dismiss="modal"
+                    <button type="button" class="btn btn-danger ml-auto" id="button-cancelar" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal" id="button-publicar"
                         (click)='publicar()'>Publicar</button>
                 </div>
             </div>
