@@ -44,6 +44,7 @@ export class PostagemComponent implements OnInit {
 
     this.getAllTemas()
     this.getAllPostagens()
+
   }
 
   getAllTemas() {
@@ -106,7 +107,19 @@ export class PostagemComponent implements OnInit {
       this.getAllPostagens()
 
     }, erro => {
-      alert('Não foi possível cadastrar sua postagem')
+
+      if (this.postagem.titulo.length < 10) {
+        alert('O titulo deve ter no minimo 10 caracteres')
+      }
+
+      if (this.postagem.texto.length < 10) {
+        alert('O texto deve ter no minimo 10 caracteres')
+      }
+
+      if (this.postagem.foto.length < 10) {
+        alert('A foto deve ter no minimo 10 caracteres')
+      }
+
     })
   }
 

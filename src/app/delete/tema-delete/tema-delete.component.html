@@ -1,26 +1,27 @@
 <div class="container mb-5 mt-5">
 
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 text-center">
+            <span><img src="../../../assets/img/delete.svg" alt="" width="50" height="50"></span>
             <h1 class="text-center text-info ">Apagar Tema</h1>
         </div>
     </div>
 
     <div class="row mb-3">
         <div class="col-md-12">
-            <h4 class="text-center text-info">Você tem certeza que deseja apagar esse tema? Todas as postagens relacionadas a ele serão igualmente apagadas</h4>
+            <h4 class="text-center text-info">Você tem certeza que deseja apagar esse tema? Todas as postagens
+                relacionadas a ele serão igualmente apagadas</h4>
         </div>
     </div>
 
-    <div class="row mb-4">
-        <div class="col-md-12">
-            <h5 class="text-center text-secondary">Titulo: {{tema.titulo}}</h5>
-
-
-    <div class="row mb-4">
-        <div class="col-md-12">
-            <h5 class="text-center text-secondary">Tema: {{tema.descricao}}</h5>
-
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title m-0">Titulo do Tema: {{tema.titulo}}</h5>
+                    <small class="text-muted">Descrição do Tema: {{tema.descricao}}</small>
+                </div>
+            </div>
         </div>
     </div>
 

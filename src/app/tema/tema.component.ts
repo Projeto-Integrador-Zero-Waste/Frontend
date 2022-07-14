@@ -40,6 +40,14 @@ export class TemaComponent implements OnInit {
       alert('Tema cadastrado com sucesso!')
       this.findAllTemas()
       this.tema = new Tema()
+    }, erro => {
+
+      if (this.tema.titulo.length < 5) {
+        alert('O titulo deve ter no minimo 5 caracteres')
+      }
+
+   
+
     })
   }
 

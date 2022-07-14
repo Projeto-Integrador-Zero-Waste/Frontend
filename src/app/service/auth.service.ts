@@ -10,25 +10,29 @@ import { UsuarioLogin } from '../model/UsuarioLogin';
 })
 export class AuthService {
 
+  private urlLocal = 'http://localhost:8080'
+  private urlHeroku = 'https://zerowastee.herokuapp.com'
+  
+
   constructor(
     private http: HttpClient
 
   ) { }
 
   entrar(usuarioLogin: UsuarioLogin): Observable<UsuarioLogin> {
-    return this.http.post<UsuarioLogin>('https://zerowastee.herokuapp.com/usuarios/logar', usuarioLogin)
+    return this.http.post<UsuarioLogin>(this.urlHeroku + '/usuarios/logar', usuarioLogin)
   }
 
   cadastrar(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>('https://zerowastee.herokuapp.com/usuarios/cadastrar', usuario)
+    return this.http.post<Usuario>(this.urlHeroku + '/usuarios/cadastrar', usuario)
 
   }
   atualizar(usuario: Usuario): Observable<Usuario>{
-    return this.http.put<Usuario>('https://zerowastee.herokuapp.com/usuarios/atualizar', usuario)
+    return this.http.put<Usuario>(this.urlHeroku + '/usuarios/atualizar', usuario)
   }
 
   getByIdUsuario(id: number): Observable<Usuario>{
-    return this.http.get<Usuario>(`https://zerowastee.herokuapp.com/usuarios/${id}`)
+    return this.http.get<Usuario>(this.urlHeroku + `/usuarios/${id}`)
     }
 
   logado(){

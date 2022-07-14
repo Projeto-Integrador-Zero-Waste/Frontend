@@ -9,6 +9,9 @@ import { Tema } from '../model/Tema';
 })
 export class TemaService {
 
+  private urlLocal = 'http://localhost:8080'
+  private urlHeroku = 'https://zerowastee.herokuapp.com'
+
   constructor(
     private http: HttpClient
   ) { }
@@ -18,27 +21,27 @@ export class TemaService {
   }
 
   getAllTema(): Observable<Tema[]> {
-    return this.http.get<Tema[]>('https://zerowastee.herokuapp.com/temas', this.token)
+    return this.http.get<Tema[]>(this.urlHeroku + '/temas', this.token)
   }
 
   getByIdTema(id: number): Observable<Tema> {
-    return this.http.get<Tema>(`https://zerowastee.herokuapp.com/temas/${id}`, this.token)
+    return this.http.get<Tema>(this.urlHeroku + `/temas/${id}`, this.token)
   }
 
   getByTituloTema(titulo: string): Observable<Tema[]>{
-    return this.http.get<Tema[]>(`https://zerowastee.herokuapp.com/temas/titulo/${titulo}`, this.token)
+    return this.http.get<Tema[]>(this.urlHeroku + `/temas/titulo/${titulo}`, this.token)
   }
 
   postTema(tema: Tema): Observable<Tema> {
-    return this.http.post<Tema>('https://zerowastee.herokuapp.com/temas', tema, this.token)
+    return this.http.post<Tema>(this.urlHeroku + '/temas', tema, this.token)
   }
 
   putTema(tema: Tema): Observable<Tema> {
-    return this.http.put<Tema>('https://zerowastee.herokuapp.com/temas', tema, this.token)
+    return this.http.put<Tema>(this.urlHeroku + '/temas', tema, this.token)
   }
 
   deleteTema(id: number) {
-    return this.http.delete(`https://zerowastee.herokuapp.com/temas/${id}`, this.token)
+    return this.http.delete(this.urlHeroku + `/temas/${id}`, this.token)
   }
 
 }

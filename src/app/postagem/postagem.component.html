@@ -4,7 +4,7 @@
         <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0"
                 src="https://i.imgur.com/m3K1767.png" alt="..." /></div>
         <div class="col-lg-5">
-            <h1 class="font-weight-light">Postagens</h1>
+            <h1 id="idpost" class="font-weight-light">Postagens</h1>
             <p>Você pode expressar suas opiniões aqui.</p>
             <button class="btn btn-outline-success mr-4" data-toggle="modal" data-target="#novaPostagem"
                     type="submit">Nova Postagem</button>
@@ -59,7 +59,8 @@
         <div class="row row-cols-1 row-cols-md-3" >
             <div class="col" *ngFor='let item of listaPostagens'>
               <div class="card mb-3" style="height: 550px">
-                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+                <img src={{item.foto}} class="card-img-top"
+                        alt="Skyscrapers" height="250px"/>
                 <div class="card-body text-center">
                     <div class="card-custom-avatar">
                         <img class="img-fluid" src={{item.usuario.foto}} alt="Avatar" />
@@ -74,8 +75,12 @@
                 
                 <div class="card-footer ">                    
                     <p class="card-text"><small class="text-muted">
-                        {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+                        <a>{{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}</a>
+                        
                     </small></p>
+
+    
+
                 </div>
               </div>
             </div>
@@ -90,11 +95,12 @@
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
 
+
         <div class="row row-cols-1 row-cols-md-3">
             <div class="col" *ngFor='let item of usuario.postagem'>
                 <div class="card mb-3" style="height: 550px">
-                    <img src="https://i.imgur.com/2V4JLEb.png" class="card-img-top"
-                        alt="Skyscrapers" />
+                    <img src={{item.foto}} class="card-img-top"
+                        alt="Skyscrapers" height="250px" />
                     <div class="card-body text-center">
                         <div class="card-custom-avatar">
                             <img class="img-fluid" src={{usuario.foto}} alt="Avatar" />
@@ -181,11 +187,17 @@
                     </div>
 
                     <div class="form-group">
+                        <label for="titulo">Foto</label>
+                        <input [(ngModel)]="postagem.foto" type="text" class="form-control" id="titulo"
+                            placeholder="Digite a foto">
+                    </div>
+
+                    <div class="form-group">
                         <label for="texto">Escolha um tema ou <a routerLink="/tema" data-dismiss="modal">cadastre um
                                 novo</a>: </label>
                         <select name="tema" id="tema" class="form-control" [(ngModel)]="idTema"
                             (change)="findByIdTema()">
-                            <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.descricao}}</option>
+                            <option *ngFor='let item of listaTemas' value="{{item.id}}">{{item.titulo}}</option>
                         </select>
 
                     </div>

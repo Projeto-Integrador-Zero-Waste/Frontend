@@ -9,6 +9,9 @@ import { Postagem } from '../model/Postagem';
 })
 export class PostagemService {
 
+  private urlLocal = 'http://localhost:8080'
+  private urlHeroku = 'https://zerowastee.herokuapp.com'
+
   constructor(
     private http: HttpClient
   ) { }
@@ -16,26 +19,29 @@ export class PostagemService {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
   getAllPostagens(): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>('https://zerowastee.herokuapp.com/postagens', this.token)
+    return this.http.get<Postagem[]>(this.urlHeroku + '/postagens', this.token)
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://zerowastee.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.get<Postagem>(this.urlHeroku + `/postagens/${id}`, this.token)
   }
 
   getByTituloPostagem(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://zerowastee.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+    return this.http.get<Postagem[]>(this.urlHeroku + `/postagens/titulo/${titulo}`, this.token)
   }
 
   postPostagem(postagem: Postagem) : Observable<Postagem>{
-    return this.http.post<Postagem>('https://zerowastee.herokuapp.com/postagens', postagem, this.token)
+    return this.http.post<Postagem>(this.urlHeroku + '/postagens', postagem, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://zerowastee.herokuapp.com/postagens', postagem, this.token)
+    return this.http.put<Postagem>(this.urlHeroku + '/postagens', postagem, this.token)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://zerowastee.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.delete(this.urlHeroku + `/postagens/${id}`, this.token)
   } 
+
+
+  
 }
