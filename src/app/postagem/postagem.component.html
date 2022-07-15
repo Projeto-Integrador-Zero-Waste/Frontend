@@ -57,7 +57,7 @@
         </div>
 
         <div class="row row-cols-1 row-cols-md-3" >
-            <div class="col" *ngFor='let item of listaPostagens'>
+            <div class="col" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
               <div class="card mb-3" style="height: 580px">
                 <img src={{item.foto}} class="card-img-top"
                         alt="Skyscrapers" height="250px"/>
@@ -94,7 +94,7 @@
 
 
         <div class="row row-cols-1 row-cols-md-3">
-            <div class="col" *ngFor='let item of usuario.postagem'>
+            <div class="col" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
                 <div class="card mb-3" style="height: 550px">
                     <img src={{item.foto}} class="card-img-top"
                         alt="Skyscrapers" height="250px" />
@@ -133,7 +133,7 @@
             </div>
         </div>
 
-        <div class="card-columns" *ngFor='let tema of listaTemas'>
+        <div class="card-columns" *ngFor='let tema of listaTemas | orderBy : key : reverse'>
             <div class="card" *ngFor='let item of tema.postagem'>
                 <div class="card mb-5 text-center" style="height: 550px">
                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"

@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { OrderModule } from 'ngx-order-pipe';
 
 
 import { AppComponent } from './app.component';
@@ -22,7 +24,7 @@ import { PostagemDeleteComponent } from './delete/postagem-delete/postagem-delet
 import { UsuarioEditComponent } from './edit/usuario-edit/usuario-edit.component';
 import { TokenInterceptorService } from './service/token-interceptor.service';
 import { AlertasComponent } from './alertas/alertas.component';
-import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    OrderModule
   ],
   providers: [{
     provide: LocationStrategy, 
