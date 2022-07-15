@@ -133,8 +133,8 @@
             </div>
         </div>
 
-        <div class="card-columns" *ngFor='let tema of listaTemas | orderBy : key : reverse'>
-            <div class="card" *ngFor='let item of tema.postagem'>
+        <div class="card-columns" *ngFor='let tema of listaTemas '>
+            <div class="card" *ngFor='let item of tema.postagem | orderBy : key : reverse'>
                 <div class="card mb-5 text-center" style="height: 550px">
                     <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
                         alt="Skyscrapers" />
