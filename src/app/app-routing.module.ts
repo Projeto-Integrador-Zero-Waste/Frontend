@@ -13,6 +13,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PostagemComponent } from './postagem/postagem.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { TemaComponent } from './tema/tema.component';
+import { ContatoComponent } from './contato/contato.component';
 
 const routes: Routes = [
 
@@ -30,6 +31,7 @@ const routes: Routes = [
   {path: 'postagem-delete/:id', component: PostagemDeleteComponent},
   {path: 'usuario-edit/:id' , component: UsuarioEditComponent},
   {path: 'equipe', component:EquipeComponent},
+  {path: 'contato', component:ContatoComponent},
 ];
 
 @NgModule({
