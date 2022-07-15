@@ -2,17 +2,16 @@
     font-size: 150pt;
 }
 
-.carousel-indicators li{
+.carousel-indicators li {
     border-radius: 50%;
     width: 13px;
     height: 13px;
     background-color: black;
 }
 
-.carousel-indicators .active{
+.carousel-indicators .active {
     background-color: #265834;
 }
-
 
 .card {
     z-index: 0;
