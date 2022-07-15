@@ -1,66 +1,64 @@
-<div class="container">
+<div class="container-fluid">
 
-<div class="row">
+    <div class="row">
 
-<div class="col-md-12">
-<h1 class="text-center text-secondary">Atualizar meu usuário</h1>
 
-</div>
-</div>
-<div class="row d-flex justify-content-center align-items-center h-100">
-    <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card text-white" id="bgForm" style="border-radius: 1rem;">
-            <div class="card-body p-5 text-center">
+    </div>
+    <div class="row d-flex justify-content-center align-items-center h-100 py-5">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <div class="card text-dark" id="bgForm" style="border-radius: 1rem;">
+                <div class="card-body p-5 text-center">
 
-                <div class="mb-md-5 mt-md-4 pb-5">
+                    <div class="mb-md-5 mt-md-4 pb-5">
 
-                    <h2 class="fw-bold mb-2 text-uppercase pb-4">Cadastre-se</h2>
+                        <h2 class="fw-bold mb-2 text-uppercase pb-4">Atualizar meu usuário</h2>
 
-                    <div class="fadeIn first pb-4">
-                        <img class="bordaLogin fotoLogin" src="../../assets/img/Logo_Zero_Waste_1.png" id="icon" alt="Zero Waste" />
-                    </div>
 
-                    <div class="form-outline form-white mb-4">
-                        <input [(ngModel)]="usuario.nome" type="nome" id="typeNomeX" class="form-control form-control-lg" placeholder="Nome" />
-                    </div>
+                        <div class="form-outline mb-4">
+                            <input [(ngModel)]="usuario.nome" type="nome" id="typeNomeX" class="form-control form-control-lg" placeholder="Alterar nome" />
+                        </div>
 
-                    <div class="form-outline form-white mb-4 ">
-                        <input  [(ngModel)]="usuario.usuario"type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Usuário" />
-                    </div>
+                        <div class="form-outline  mb-4 ">
+                            <input [(ngModel)]="usuario.usuario" type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Alterar usuário" />
+                        </div>
 
-                    <div class="form-outline form-white mb-4">
-                        <input  [(ngModel)]="usuario.foto"type="foto" id="typeFotoX" class="form-control form-control-lg" placeholder="Link foto" />
-                    </div>
+                        <div class="form-outline  mb-4">
+                            <input [(ngModel)]="usuario.foto" type="foto" id="typeFotoX" class="form-control form-control-lg" placeholder="Alterar link da foto" />
+                        </div>
 
-                    <div class="form-outline form-white mb-4">
-                        <input  (input)='confirmSenha($event)' type="password" id="senha" class="form-control form-control-lg" placeholder="Senha" />
-                    </div>
+                        <div class="form-outline  mb-4">
+                            <input (input)='confirmSenha($event)' type="password" id="senha" class="form-control form-control-lg" placeholder="Alterar senha" />
+                        </div>
 
-                    <div class="form-outline form-white mb-4">
-                        <input  [(ngModel)]="usuario.senha" type="password" id="confirmSenha" class="form-control form-control-lg" placeholder="Confirme a senha" />
-                    </div>
+                        <div class="form-outline  mb-4">
+                            <input [(ngModel)]="usuario.senha" type="password" id="confirmSenha" class="form-control form-control-lg" placeholder="Confirmar nova senha" />
+                        </div>
 
-                    <div class="form-outline form-white mb-4">
-                        <select class="form-control form-control-lg" name="tipo" id="tipo" (change)='tipoUser($event)'>
-                            <option>Selecione sua categoria:</option>
+                        <div class="form-outline mb-4">
+                            <select class="form-control form-control-lg" name="tipo" id="tipo" (change)='tipoUser($event)'>
+                            <option>Alterar sua categoria:</option>
                             <option value="ong">ONG/Associação</option>
                             <option value="doador">Doador/Empresa</option>
                         </select>
+                        </div>
+
+                        <button class="btn btn-danger btn text-white font-weight-bold px-5 mr-2" type="submit" routerLink="/home">Cancelar</button>
+
+                        <button class="btn btn-success btn text-white font-weight-bold px-5" type="submit" (click)="atualizar()">Atualizar</button>
+
                     </div>
 
-                    <button class="btn btn-outline-danger btn text-white font-weight-bold px-5 mr-2" type="submit" routerLink="/login">Cancelar</button>
+                    <div>
+                        <div>
+                            <p class="mb-0">Dúvidas? <a href="#!" routerLink="/contato" class="text-dark-50 fw-bold">Entre em contato com o suporte</a>
+                            </p>
+                        </div>
 
-                    <button class="btn btn-outline-success btn text-white font-weight-bold px-5" type="submit"(click)="atualizar()">Atualizar</button>
+                    </div>
+
 
                 </div>
-
-                <div>
-                    <p class="mb-0">Voltar para a página principal? <a href="#!" routerLink="/login" class="text-white-50 fw-bold">Voltar</a>
-                    </p>
-                </div>
-
             </div>
         </div>
     </div>
-</div>
 </div>
