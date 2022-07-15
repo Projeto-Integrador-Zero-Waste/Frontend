@@ -1,7 +1,7 @@
 <div class="container px-4 px-lg-5">
 
   <div class="row gx-4 gx-lg-5 align-items-center my-5">
-    
+
     <div class="col-lg-5">
       <h1 class="font-weight-light">Temas</h1>
       <p>Veja aqui todos os temas cadastrados ou cadastre um novo:</p>
@@ -13,9 +13,10 @@
         <input [(ngModel)]="tema.descricao" type="text" class="form-control" id="descricao"
           placeholder="Descrição do tema">
       </div>
-      <button class="btn btn-light" (click)='cadastrarTema()'>Cadastrar</button>
+      <button class="btn mr-4 text-white btn-success" id="button-publicar" (click)='cadastrarTema()'>Cadastrar</button>
+      <button class="btn text-white btn-danger" id="button-cancelar" routerLink="/postagem">Voltar</button>
     </div>
-    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://i.imgur.com/usSrnDL.png" alt="..." />
+    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://i.imgur.com/KGPeK7C.png" alt="..." />
     </div>
   </div>
 
@@ -47,8 +48,8 @@
             <td>{{item.titulo}}</td>
             <td>{{item.descricao}}</td>
             <td class="d-flex justify-content-end">
-              <button class="btn btn-info mr-3" [routerLink]="['/tema-edit', item.id]">Editar</button>
-              <button class="btn btn-danger" [routerLink]="['/tema-delete', item.id]">Apagar</button>
+              <button class="btn mr-3 btn-success" id="button-publicar" [routerLink]="['/tema-edit', item.id]">Editar</button>
+              <button class="btn btn-danger" id="button-cancelar" [routerLink]="['/tema-delete', item.id]">Apagar</button>
             </td>
           </tr>
         </tbody>

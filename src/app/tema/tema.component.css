@@ -1,0 +1,25 @@
+#button-cancelar{
+    border-radius: 15px;
+    background-color: #D11A2A;
+    font-size: 10pt;
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+}
+
+#button-publicar{
+  border-radius: 15px;
+  background-color: #4BB543;
+  font-size: 10pt;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
+}
+
+#button-cancelar:hover{
+  color: rgb(0, 0, 0);
+}
+
+#button-publicar:hover{
+  color: rgb(0, 0, 0);
+}
