@@ -7,6 +7,7 @@ import { Postagem } from './../model/Postagem';
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
+import { AlertasService } from '../service/alertas.service';
 
 @Component({
   selector: 'app-postagem',
@@ -32,14 +33,15 @@ export class PostagemComponent implements OnInit {
     private router: Router,
     private postagemService: PostagemService,
     private temaService: TemaService,
-    public authService: AuthService
+    public authService: AuthService,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit() {
     window.scroll(0, 0)
 
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça o login novamente!')
+      this.alertas.showAlertInfo('Sua sessão expirou, faça o login novamente!')
       this.router.navigate(['/login'])
     }
 
@@ -103,22 +105,22 @@ export class PostagemComponent implements OnInit {
 
     this.postagemService.postPostagem(this.postagem).subscribe((resp: Postagem) => {
       this.postagem = resp
-      alert('Postagem realizada com sucesso!')
+      this.alertas.showAlertSuccess('Postagem realizada com sucesso!')
       this.postagem = new Postagem()
       this.getAllPostagens()
 
     }, erro => {
 
       if (this.postagem.titulo.length < 10) {
-        alert('O titulo deve ter no minimo 10 caracteres')
+        this.alertas.showAlertInfo('O titulo deve ter no minimo 10 caracteres')
       }
 
       if (this.postagem.texto.length < 10) {
-        alert('O texto deve ter no minimo 10 caracteres')
+        this.alertas.showAlertInfo('O texto deve ter no minimo 10 caracteres')
       }
 
       if (this.postagem.foto.length < 10) {
-        alert('A foto deve ter no minimo 10 caracteres')
+        this.alertas.showAlertInfo('A foto deve ter no minimo 10 caracteres')
       }
 
     })
