@@ -23,10 +23,13 @@ export class PostagemComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
-  // nomeTema: string
+ 
 
   usuario: Usuario = new Usuario()
   idUser = environment.id
+
+  key = 'data'
+  reverse = true
 
   constructor(
     private router: Router,

@@ -127,3 +127,11 @@
         width: 50%;
     }
 }
+
+.lead {
+    text-indent: 40px;
+}
+
+.bg-color {
+    color: #265834;
+}

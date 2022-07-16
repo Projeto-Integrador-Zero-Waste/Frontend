@@ -151,3 +151,43 @@
             <img src="https://i.imgur.com/m3K1767.png " class="featurette-image img-fluid mx-auto " alt="Responsive image " preserveAspectRatio="xMidYMid slice " focusable="false ">
 
         </div>
+
+
+
+        <div class="container">
+
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner p-5">
+
+                    <div *ngFor="let noticia of noticias; let i = index" class="carousel-item {{i==0?'active':''}}">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="col-8 card mb-3">
+                                <div class="row no-gutters">
+                                    <div class="col-md-6">
+                                        <img src="{{noticia.imagem}}" class="card-img mt-3" alt="...">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card-body">
+                                            <h5 class="card-title font-weight-bold">{{noticia.titulo}}</h5>
+                                            <p class="card-text">{{noticia.descricao}}</p>
+                                            <a href="{{noticia.linkExterno}}" target="_blank">Leia mais...</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control bg-color" aria-hidden="true"><i class="fa fa-arrow-left" id="carouselArrow"></i></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control bg-color" aria-hidden="true"><i class="fa fa-arrow-right" id="carouselArrow"></i></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
