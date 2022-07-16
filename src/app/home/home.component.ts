@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
+import { AlertasService } from '../service/alertas.service';
 import { PostagemService } from '../service/postagem.service';
 
 class noticia {
@@ -33,12 +34,14 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private postagemService: PostagemService) { }
+    private postagemService: PostagemService,
+    private alertas: AlertasService
+    ) { }
 
   ngOnInit() {
 
     if (environment.token == '') {
-      alert('Sua sessão expirou, faça o login novamente')
+      this.alertas.showAlertInfo('Sua sessão expirou, faça o login novamente')
       this.router.navigate(['/login'])
     }
     this.noticias.push(new noticia('https://i.imgur.com/7zsnpaU.png', 'Fome e Agricultura sustentável', 'Erradicar a fome, alcançar a segurança alimentar e melhorar a nutrição.', 'https://brasil.un.org/pt-br/sdgs'))
