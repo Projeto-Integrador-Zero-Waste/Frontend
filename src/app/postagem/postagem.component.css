@@ -157,5 +157,28 @@ a:link {
 .lined .nav-link.active {
   background: none;
   color: #555;
-  border-color: #2b90d9;
+  border-color: rgb(137, 165, 139);
+}
+
+.nav-pills .nav-link {
+  color: rgb(0, 0, 0);
+}
+.text-uppercase {
+  letter-spacing: 0.1em;
+}
+
+.with-arrow .nav-link.active {
+  position: relative;
+}
+
+.with-arrow .nav-link.active::after {
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(137, 165, 139);
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: block;
 }
