@@ -43,10 +43,10 @@
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
                         <div class="card mb-3" style="height: 580px">
-                            <img src={{item.foto}} class="card-img-top" alt="Skyscrapers" height="250px" />
+                            <img src={{item.foto}} (error)="verificaImagemPostagem($event)" class="card-img-top" alt="Skyscrapers" height="250px" />
                             <div class="card-body text-center">
                                 <div class="card-custom-avatar">
-                                    <img class="img-fluid" src={{item.usuario.foto}} alt="Avatar" />
+                                    <img class="img-fluid" src={{item.usuario.foto}} (error)="verificaImagemUsuario($event)" alt="Avatar" />
                                 </div>
                                 <h5 class="card-title">{{item.titulo}}</h5>
                                 <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
@@ -75,10 +75,10 @@
                 <div class="row row-cols-1 row-cols-md-3">
                     <div class="col" *ngFor='let item of usuario.postagem | orderBy : key : reverse'>
                         <div class="card mb-3" style="height: 550px">
-                            <img src={{item.foto}} class="card-img-top" alt="Skyscrapers" height="250px" />
+                            <img src={{item.foto}} (error)="verificaImagemPostagem($event)" class="card-img-top" alt="Skyscrapers" height="250px" />
                             <div class="card-body text-center">
                                 <div class="card-custom-avatar">
-                                    <img class="img-fluid" src={{usuario.foto}} alt="Avatar" />
+                                    <img class="img-fluid" src={{usuario.foto}} (error)="verificaImagemUsuario($event)" alt="Avatar" />
                                 </div>
                                 <h5 class="card-title">{{item.titulo}}</h5>
                                 <small class="text-muted"> Tema: {{item.tema.descricao}}</small>

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { environment } from './../../environments/environment.prod';
 import { Component, OnInit } from '@angular/core';
 import { AlertasService } from '../service/alertas.service';
+import { getLocaleCurrencyCode } from '@angular/common';
 
 @Component({
   selector: 'app-postagem',
@@ -48,6 +49,8 @@ export class PostagemComponent implements OnInit {
     if (environment.token == '') {
       this.alertas.showAlertInfo('Sua sessão expirou, faça o login novamente!')
       this.router.navigate(['/login'])
+
+
     }
 
     this.getAllTemas()
@@ -83,16 +86,6 @@ export class PostagemComponent implements OnInit {
     })
   }
 
-  // findByTituloPostagem() {
-  //   if(this.tituloPost == ''){
-  //     this.getAllPostagens()
-  //   }else{
-  //     this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
-  //       this.listaPostagens = resp
-  //     })
-  //   }
-  // }
-
   findByTituloPostagem() {
     if(this.tituloPost == ''){
       this.getAllPostagens()
@@ -116,6 +109,17 @@ export class PostagemComponent implements OnInit {
   }
 
 
+  verificaImagemUsuario(event: Event) {
+    const htmlImagem = event.target as HTMLImageElement;
+    htmlImagem.src =
+      'https://i.imgur.com/EVdBYb0.png';
+  }
+
+  verificaImagemPostagem(event: Event) {
+    const htmlImagem = event.target as HTMLImageElement;
+    htmlImagem.src =
+      'https://i.imgur.com/Ieo8CbJ.png';
+  }
 
   publicar() {
     this.tema.id = this.idTema
