@@ -151,7 +151,6 @@ export class PostagemComponent implements OnInit {
       if(this.idTema == null){
         this.alertas.showAlertDanger('Por favor, selecione um tema!!')
       }
-
     })
   }
 
