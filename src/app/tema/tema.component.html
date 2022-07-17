@@ -1,61 +1,106 @@
 <div class="container px-4 px-lg-5">
 
-  <div class="row gx-4 gx-lg-5 align-items-center my-5">
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
 
-    <div class="col-lg-5">
-      <h1 class="font-weight-light">Temas</h1>
-      <p>Veja aqui todos os temas cadastrados ou cadastre um novo:</p>
-      <div class="form-group">
-        <input [(ngModel)]="tema.titulo" type="text" class="form-control" id="titulo" placeholder="Título do tema">
-      </div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">Temas</h1>
+            <p>Veja aqui todos os temas cadastrados ou cadastre um novo:</p>
+            <div class="form-group">
+                <input [(ngModel)]="tema.titulo" type="text" class="form-control" id="titulo" placeholder="Título do tema">
+            </div>
 
-      <div class="form-group">
-        <input [(ngModel)]="tema.descricao" type="text" class="form-control" id="descricao"
-          placeholder="Descrição do tema">
-      </div>
-      <button class="btn mr-4 text-white btn-success" id="button-publicar" (click)='cadastrarTema()'>Cadastrar</button>
-      <button class="btn text-white btn-danger" id="button-cancelar" routerLink="/postagem">Voltar</button>
+            <div class="form-group">
+                <input [(ngModel)]="tema.descricao" type="text" class="form-control" id="descricao" placeholder="Descrição do tema">
+            </div>
+            <button class="btn mr-4 text-white btn-success" id="button-publicar" (click)='cadastrarTema()'>Cadastrar</button>
+            <button class="btn text-white btn-danger" id="button-cancelar" routerLink="/postagem">Voltar</button>
+        </div>
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://i.imgur.com/KGPeK7C.png" alt="..." />
+        </div>
     </div>
-    <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://i.imgur.com/KGPeK7C.png" alt="..." />
-    </div>
-  </div>
 
 </div>
 
 <div class="container">
 
-  <div class="row mb-5">
-    <div class="col-md-12">
-      <h2 class="text-center">Todos os temas</h2>
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h2 class="text-center">Todos os temas</h2>
+        </div>
     </div>
-  </div>
 
-  <div class="row mt-6 mb-5 d-flex justify-content-center">
-    <div class="col-md-8">
+    <div class="row mt-6 mb-5 d-flex justify-content-center">
+        <div class="col-md-8">
 
-      <table class="table table-hover table-bordered text-center">
-        <thead class="thead-dark">
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Titulo</th>
-            <th scope="col">Descrição</th>
-            <th scope="col">Modificações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor='let item of listaTemas'>
-            <th>{{item.id}}</th>
-            <td>{{item.titulo}}</td>
-            <td>{{item.descricao}}</td>
-            <td class="d-flex justify-content-end">
-              <button class="btn mr-3 btn-success" id="button-publicar" [routerLink]="['/tema-edit', item.id]">Editar</button>
-              <button class="btn btn-danger" id="button-cancelar" [routerLink]="['/tema-delete', item.id]">Apagar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            <table class="table table-hover table-bordered text-center">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Titulo</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Modificações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let item of listaTemas'>
+                        <th>{{item.id}}</th>
+                        <td>{{item.titulo}}</td>
+                        <td>{{item.descricao}}</td>
+                        <td class="d-flex justify-content-end">
+                            <button class="btn mr-3 btn-success" id="button-publicar" data-toggle="modal" data-target="#editor" (click)="editar(item.id)">Editar</button>
+                            <button class="btn btn-danger" id="button-cancelar" [routerLink]="['/tema-delete', item.id]">Apagar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
+        </div>
     </div>
-  </div>
 
+</div>
+
+
+<!-- Modal Editar -->
+<div class="modal fade" id="editor" tabindex="-1" role="dialog" aria-labelledby="editorTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title font-weight-bold" id="TituloModalCentralizado">Alterar tema</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+
+
+                </div>
+                <div class="form-group">
+                    <label for="titulo" class="font-weight-bold">Título</label>
+                    <input [(ngModel)]='temaEdit.titulo' #tituloTemaEdit="ngModel" type="text" required minlength="5" placeholder="Altere o título" class="rounded-pill form-control ">
+
+                    <small *ngIf="tituloTemaEdit.errors?.['required']" class="">Título não pode ser vazio.</small>
+
+                    <small *ngIf="tituloTemaEdit.errors?.['minlength']" class="">Título precisa ter mais de 05 caracteres.
+                  </small>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="descricao" class="font-weight-bold">Descrição</label>
+                    <input [(ngModel)]='temaEdit.descricao' type="textarea" #descricaoTemaEdit="ngModel" type="text" placeholder="Altere a descrição" class="rounded-pill form-control ">
+
+
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn  button-cancelar text-white" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn button-salvar text-white" data-dismiss="modal" (click)="atualizar()">Salvar alterações</button>
+            </div>
+        </div>
+    </div>
 </div>
