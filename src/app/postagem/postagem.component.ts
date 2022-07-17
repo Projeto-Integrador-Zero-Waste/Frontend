@@ -24,10 +24,12 @@ export class PostagemComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
   idTema: number
- 
+
 
   usuario: Usuario = new Usuario()
   idUser = environment.id
+
+  getTitulo: string
 
   key = 'data'
   reverse = true
@@ -51,6 +53,10 @@ export class PostagemComponent implements OnInit {
     this.getAllTemas()
     this.getAllPostagens()
 
+  }
+
+  validacaoTitulo(event: any) {
+    this.getTitulo = event.target.value
   }
 
   getAllTemas() {
@@ -77,16 +83,28 @@ export class PostagemComponent implements OnInit {
     })
   }
 
+  // findByTituloPostagem() {
+  //   if(this.tituloPost == ''){
+  //     this.getAllPostagens()
+  //   }else{
+  //     this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
+  //       this.listaPostagens = resp
+  //     })
+  //   }
+  // }
+
   findByTituloPostagem() {
-    if (this.tituloPost == '') {
+    if(this.tituloPost == ''){
       this.getAllPostagens()
-    } else {
+    }else{
       this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) => {
         this.listaPostagens = resp
       })
     }
   }
 
+
+  
   findByTituloTema() {
     if (this.tituloTema == '') {
       this.getAllTemas()
@@ -124,6 +142,10 @@ export class PostagemComponent implements OnInit {
 
       if (this.postagem.foto.length < 10) {
         this.alertas.showAlertDanger('A foto deve ter no minimo 10 caracteres')
+      }
+
+      if(this.idTema == null){
+        this.alertas.showAlertDanger('Por favor, selecione um tema!!')
       }
 
     })

@@ -47,5 +47,23 @@ export class CadastroComponent implements OnInit {
       })
 
     }
+
+    if(this.usuario.nome == null){
+      this.alertas.showAlertDanger('O atributo nome é obrigatório')
+    }
+
+    if(this.usuario.senha.length < 8){
+      this.alertas.showAlertDanger('A senha deve ter no mínimo 8 caracteres')
+    }
+
+    if(this.tipoUsuario == null){
+      this.alertas.showAlertDanger('Selecione um tipo!!')
+    }
+
+    
+
+
+
+
   }
 }

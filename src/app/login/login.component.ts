@@ -53,6 +53,10 @@ export class LoginComponent implements OnInit {
         this.alertas.showAlertDanger('Usuário ou senha estão incorretos!')
       }
 
+      if (erro.status == 500) {
+        this.alertas.showAlertDanger('Erro no servidor, tente novamente')
+      }
+
     })
   }
 

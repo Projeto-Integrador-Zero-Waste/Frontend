@@ -16,13 +16,13 @@
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <input [(ngModel)]="usuario.nome" type="nome" id="typeNomeX"
+                                    <input [(ngModel)]="usuario.nome" type="nome" id="nome"
                                         class="form-control form-control-lg" placeholder="Nome" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4 ">
                                     <input [(ngModel)]="usuario.usuario" type="email" id="typeEmailX"
-                                        class="form-control form-control-lg" placeholder="Usuário" />
+                                        class="form-control form-control-lg" placeholder="E-mail" />
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
@@ -41,9 +41,8 @@
                                 </div>
 
                                 <div class="form-outline form-white mb-4">
-                                    <select class="form-control form-control-lg" name="tipo" id="tipo"
+                                    <select class="form-control form-control-lg" name="tipo" id="tipo" [(ngModel)]="tipoUsuario"
                                         (change)='tipoUser($event)'>
-                                        <option>Selecione sua categoria:</option>
                                         <option value="ong">ONG/Associação</option>
                                         <option value="doador">Doador/Empresa</option>
                                     </select>
