@@ -137,19 +137,15 @@ export class PostagemComponent implements OnInit {
     }, erro => {
 
       if (this.postagem.titulo.length < 10) {
-        this.alertas.showAlertDanger('O titulo deve ter no minimo 10 caracteres')
+        this.alertas.showAlertDanger('O título deve ter no mínimo 10 caracteres.')
       }
 
       if (this.postagem.texto.length < 10) {
-        this.alertas.showAlertDanger('O texto deve ter no minimo 10 caracteres')
-      }
-
-      if (this.postagem.foto.length < 10) {
-        this.alertas.showAlertDanger('A foto deve ter no minimo 10 caracteres')
+        this.alertas.showAlertDanger('O texto deve ter no mínimo 10 caracteres.')
       }
 
       if(this.idTema == null){
-        this.alertas.showAlertDanger('Por favor, selecione um tema!!')
+        this.alertas.showAlertDanger('Por favor, selecione um tema!')
       }
     })
   }

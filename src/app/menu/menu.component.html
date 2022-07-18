@@ -1,8 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand " href="#">
+    <a class="navbar-brand " [routerLink]="['/home']">
         <img src="https://i.imgur.com/5ry54Bv.png" alt="" width="200">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -32,7 +33,8 @@
                 Perfil
             </button>
             <div class="dropdown-menu text-center">
-                <img src="{{foto}}" class="img-fluid rounded-circle mt-3" alt="imagem do usuario" width="100" height="100">
+                <img src="{{foto}}" class="img-fluid rounded-circle mt-3" alt="imagem do usuario" width="100"
+                    height="100">
                 <p class="pt-2">{{nome}}</p>
                 <a class="dropdown-item pt-3 editarHover" [routerLink]="['/usuario-edit', id]">Editar</a>
                 <a class="dropdown-item" (click)='sair()' href="#">Sair</a>

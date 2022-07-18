@@ -2,15 +2,15 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-5 mr-auto">
-                <h3 class="mb-3">Entre em contato!</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae sequi, ipsa hic alias officia facilis eveniet, neque laborum cumque maxime soluta. Neque atque necessitatibus ipsam sequi soluta magni, iste vero fuga inventore, explicabo
-                    totam quis quia nemo possimus cupiditate doloribus?</p>
-                <p>Quasi optio numquam pariatur amet laudantium, dicta ullam obcaecati nihil eveniet et aperiam beatae illum vitae in asperiores, a ex. Voluptates accusantium, beatae dolorem natus delectus nostrum, iusto nemo optio quas eum, quis a in reprehenderit
-                    totam, sequi distinctio impedit.</p>
-                <p>Dolor aliquid, commodi vitae dolorum veniam amet error! Nemo nam quibusdam delectus dolore eveniet officia harum eum sit magnam possimus. Eum optio dolores repellat ea impedit, in unde, rem ipsam rerum autem iusto vero facilis blanditiis
-                    explicabo sapiente consequatur provident? <a href="#">info@mywebsite.com</a></p>
-
+            <div class="col-md-5 mr-auto text-white">
+                <h3 class="mb-3 titulo">Entre em contato!</h3>
+                <p class="tmP">Deseja fazer parte desse ato de amor?</p>
+                <p class="tmP">Se você tem interesse em apoiar nossa plataforma, esse é o lugar certo!</p>
+                <p class="tmP">Seu financiamento irá nos ajudar nas pesquisas e implementações de novas tecnologias, também nos
+                    ajudará nas campanhas de marketing para atrair mais usuários para plataforma.</p>
+                <br>
+                <p class="tmP">Teve problemas com a plataforma, alguma sugestão ou dúvida? Nos envie uma mensagem e nossos
+                    colaboradores entrarão em contato o mais rápido possível.</p>
             </div>
 
             <div class="col-md-6">
@@ -28,14 +28,16 @@
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <label for="email" class="col-form-label">Email *</label>
-                                <input type="text" class="form-control" name="email" id="email" placeholder="Seu e-mail">
+                                <input type="text" class="form-control" name="email" id="email"
+                                    placeholder="Seu e-mail">
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-md-12 form-group">
                                 <label for="message" class="col-form-label">Mensagem *</label>
-                                <textarea class="form-control" name="message" id="message" cols="30" rows="7" placeholder="Escreva uma mensagem"></textarea>
+                                <textarea class="form-control" name="message" id="message" cols="30" rows="7"
+                                    placeholder="Escreva uma mensagem"></textarea>
                             </div>
                         </div>
                         <div class="row mb-3">
@@ -44,13 +46,14 @@
                                 <select class="custom-select" id="categoria" name="categoria">
                                     <option selected>Escolha...</option>
                                     <option value="Problemas na plataforma">
-                                         Problemas na plataforma</option>
+                                        Problemas na plataforma</option>
                                     <option value="Financiamento">Financiar a Zero Waste</option>
                                 </select>
                             </div>
                             <div class="col-md-6 form-group">
                                 <label for="message" class="col-form-label">Empresa / ONG?</label>
-                                <input type="text" class="form-control" name="date" id="date" placeholder="Escreva a razão social">
+                                <input type="text" class="form-control" name="date" id="date"
+                                    placeholder="Escreva a razão social">
 
 
                             </div>
@@ -58,7 +61,8 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                <input type="submit" (click)="enviar()" value="Enviar" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                                <input type="submit" (click)="enviar()" value="Enviar"
+                                    class="btn btn-block btn-primary rounded-0 py-2 px-4">
                                 <span class="submitting"></span>
                             </div>
                         </div>
