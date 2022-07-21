@@ -80,11 +80,11 @@ export class TemaComponent implements OnInit {
       .subscribe((resp: Tema) => {
         this.temaEdit = resp;
         this.temaEdit = new Tema();
-        alert('Tema atualizado com sucesso!');
+        this.alertas.showAlertSuccess('Tema atualizado com sucesso!')
       },
       (erro) => {
         if (erro.status == 400) {
-          alert('Campo não foi preenchido corretamente')
+          this.alertas.showAlertDanger('Campo não foi preenchido corretamente')
           this.findAllTema();
         }
       });
@@ -94,7 +94,7 @@ export class TemaComponent implements OnInit {
     this.temaService
       .deleteTema(this.temaApagar.id)
       .subscribe(() => {
-        alert('Produto excluído!');
+        this.alertas.showAlertSuccess('Tema excluído!');
         this.findAllTema();
       });
   }
