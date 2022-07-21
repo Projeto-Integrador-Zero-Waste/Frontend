@@ -9,6 +9,7 @@ import { Postagem } from '../model/Postagem';
 })
 export class PostagemService {
 
+
   private urlLocal = 'http://localhost:8080'
   private urlHeroku = 'https://zerowastee.herokuapp.com'
 
@@ -40,8 +41,8 @@ export class PostagemService {
 
   deletePostagem(id: number){
     return this.http.delete(this.urlHeroku + `/postagens/${id}`, this.token)
-  } 
+  }
 
 
-  
+
 }
